@@ -12,3 +12,14 @@ services:
       - 5000:5000
     depends_on:
       - users_db
+  notes_db:
+    image: mongo
+  notes:
+    build: notes/.
+    command: python app.py
+    volumes:
+      - ./notes:/app
+    ports:
+      - "5001:5000"
+    depends_on:
+      - notes_db
