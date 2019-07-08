@@ -18,7 +18,7 @@ class UserList(Resource):
         self._user_service = user_service
 
     @marshal_with(USER_FIELDS)
-    def get(self, page=0):
+    def get(self):
         """GET HTTP method manager"""
         query = json.loads(self._request.args.get('query', '{}'))
         page = int(self._request.args.get('page', 0))
