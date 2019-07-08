@@ -9,7 +9,7 @@ services:
     volumes:
       - ./users:/app
     ports:
-      - 5000:5000
+      - "5000:5000"
     depends_on:
       - users_db
   notes_db:
